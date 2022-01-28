@@ -5,6 +5,7 @@ import image1 from '../images/secure.svg';
 import image2 from '../images/hacker.svg';
 import image3 from '../images/lock.svg';
 import kortImage from '../images/kort.png';
+import PasswordChecker from '../components/PasswordChecker';
 
 function StudentPage() {
   const StudentPage = styled.header`
@@ -49,26 +50,6 @@ function StudentPage() {
 
       @media only screen and (max-width: 1000px) {
         margin-block: 40px;
-      }
-    }
-
-    .password-checker {
-      .container {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-
-        p {
-          font-family: ${props => props.theme.font.paragraph};
-          font-size: 18px;
-        }
-        
-        input {
-         // border: none;
-          border-radius: 5px;
-          font-family: ${props => props.theme.font.paragraph};
-          font-size: 18px;
-        }
       }
     }
   `;
@@ -166,18 +147,10 @@ function StudentPage() {
             <div>
               <h2 className="title">Password tjekker</h2>
               <p>Tjek dit kodeords styrke med vores kodeord tjekker. Den kigger efter længde og hvilke type tegn du anvender.</p>
+              <PasswordChecker />
             </div>
             <div className="password-checker">
-              <h2 className="title">Tjek dit password</h2>
-              <p>Indskriv dit kodeord, eller noget der minder om, og se om det stærkt.</p>
-              <div className="container">
-                <p>Kodeord</p>
-                <input type="text" />
-              </div>
-              <h3 className="title">Konklusion</h3>
-              <p>Dit kodeord er stærkt.</p>
-              <p>Du anvender BLANK</p>
-              <p>Det tager BLANK for at løse det.</p>
+              
             </div>
           </SplitContainer>
         </Wrapper>
