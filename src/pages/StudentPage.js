@@ -46,12 +46,32 @@ function StudentPage() {
       height: 2px;
       width: 90%;
       background-color: #DDDDDD;
+
+      @media only screen and (max-width: 1000px) {
+        margin-block: 40px;
+      }
+    }
+
+    .password-checker {
+      .container {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        p {
+          font-family: ${props => props.theme.font.paragraph};
+          font-size: 18px;
+        }
+        
+        input {
+         // border: none;
+          border-radius: 5px;
+          font-family: ${props => props.theme.font.paragraph};
+          font-size: 18px;
+        }
+      }
     }
   `;
-
-  const TextContainer = styled.div`
-
-  `
 
   const SplitContainer = styled.div`
     display: grid;
@@ -80,6 +100,10 @@ function StudentPage() {
 
   const Wrapper = styled.div`
     padding-inline: 10%;
+
+    @media only screen and (max-width: 500px) {
+      padding-inline: 5%;
+    }
 
     &.white {
       margin-top: 48px;
@@ -134,6 +158,27 @@ function StudentPage() {
               </ul>
             </div>
             <img className="image hide" src={image3} alt="" />
+          </SplitContainer>
+        </Wrapper>
+        <hr />
+        <Wrapper>
+          <SplitContainer>
+            <div>
+              <h2 className="title">Password tjekker</h2>
+              <p>Tjek dit kodeords styrke med vores kodeord tjekker. Den kigger efter længde og hvilke type tegn du anvender.</p>
+            </div>
+            <div className="password-checker">
+              <h2 className="title">Tjek dit password</h2>
+              <p>Indskriv dit kodeord, eller noget der minder om, og se om det stærkt.</p>
+              <div className="container">
+                <p>Kodeord</p>
+                <input type="text" />
+              </div>
+              <h3 className="title">Konklusion</h3>
+              <p>Dit kodeord er stærkt.</p>
+              <p>Du anvender BLANK</p>
+              <p>Det tager BLANK for at løse det.</p>
+            </div>
           </SplitContainer>
         </Wrapper>
         
