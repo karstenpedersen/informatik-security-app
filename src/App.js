@@ -16,7 +16,7 @@ function App() {
           <Route path="/" exact element={<IndexPage/>}/>
           <Route path="/it-sikkerhed" exact element={<StudentPage/>}/>
         </Routes>
-
+        
         <Footer />
       </BrowserRouter>
     </Theme>

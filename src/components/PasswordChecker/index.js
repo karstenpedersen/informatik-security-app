@@ -35,6 +35,7 @@ function PasswordChecker() {
   }
 
   function strengthChecker(passwordParameter) {
+    console.log("STRENGTH - " + passwordParameter)
     if (strongPassword.test(passwordParameter)) {
       setStrength('stærk');
     } else if (mediumPassword.test(passwordParameter)) {
