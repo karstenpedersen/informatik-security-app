@@ -6,6 +6,8 @@ import image2 from '../images/hacker.svg';
 import image3 from '../images/lock.svg';
 import kortImage from '../images/kort.png';
 import PasswordChecker from '../components/PasswordChecker';
+import SplitContainer from '../components/SplitContainer';
+
 
 function StudentPage() {
   const StudentPage = styled.header`
@@ -52,32 +54,51 @@ function StudentPage() {
         margin-block: 40px;
       }
     }
-  `;
 
-  const SplitContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-
-    @media only screen and (max-width: 1000px) {
-      grid-template-columns: 1fr;
-    }
-
-    .image {
-      width: 80%;
+    .mcafee {
+      width: 60%;
       margin-inline: auto;
+      margin-block: 128px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      
+      p {
+        @media only screen and (min-width: 1000px) {
+          font-size: 18px;
+        }
+      }
+
+      a {
+        font-size: 16px;
+        padding: 6px 12px;
+        color: white;
+        background-color: ${props => props.theme.color.highlight};
+        border-radius: 5px;
+        font-family: ${props => props.theme.font.paragraph};
+        text-decoration: none;
+        margin-top: 12px;
+
+        &:hover {
+          background-color: ${props => props.theme.color.dark};
+        }
+
+        @media only screen and (min-width: 1000px) {
+          font-size: 20px;
+          padding: 12px 24px;
+        }
+      }
 
       @media only screen and (max-width: 1000px) {
+        display: block;
+        margin-block: 24px;
+        text-align: left;
         width: 100%;
       }
     }
-
-    .image.hide {
-      @media only screen and (max-width: 1000px) {
-        display: none;
-      }
-    }
-  `
+  `;
 
   const Wrapper = styled.div`
     padding-inline: 10%;
@@ -120,6 +141,11 @@ function StudentPage() {
               <p>Computervirusser er programmer som du kan komme til at hente ned. De køre på computeren uden at du opdager dem og kan sende sentitiv information til uvedkommende.</p>
             </div>
           </SplitContainer>
+          <div className="mcafee">
+            <h2 className="title">Omløbende trusler</h2>
+            <p>Det er godt at holde styr på hvilke trusler der findes. Derfor vil vi foreslå at tjekke McAfee's Threat Center ud, hvis du vil holde dig opdateret.</p>
+            <a href="https://www.mcafee.com/enterprise/en-us/threat-center.html">McAfee Threat Center</a>
+          </div>
         </Wrapper>
         <hr />
         <Wrapper>
@@ -143,16 +169,7 @@ function StudentPage() {
         </Wrapper>
         <hr />
         <Wrapper>
-          <SplitContainer>
-            <div>
-              <h2 className="title">Password tjekker</h2>
-              <p>Tjek dit kodeords styrke med vores kodeord tjekker. Den kigger efter længde og hvilke type tegn du anvender.</p>
-              <PasswordChecker />
-            </div>
-            <div className="password-checker">
-              
-            </div>
-          </SplitContainer>
+          <PasswordChecker />
         </Wrapper>
         
         <Wrapper className="white">
