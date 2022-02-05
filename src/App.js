@@ -1,4 +1,4 @@
-import { React, Component } from 'react';
+import { React } from 'react';
 import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import IndexPage from "./pages/IndexPage";
@@ -16,7 +16,7 @@ function App() {
           <Route path="/" exact element={<IndexPage/>}/>
           <Route path="/it-sikkerhed" exact element={<StudentPage/>}/>
         </Routes>
-        
+
         <Footer />
       </BrowserRouter>
     </Theme>

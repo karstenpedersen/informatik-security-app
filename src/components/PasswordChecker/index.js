@@ -49,7 +49,11 @@ function PasswordChecker() {
     setHasNumber(numberChecker.test(password));
 
     if (password === 'marcus') {
-      setStrength('🤢 Dit kodeord er klamt.');
+      setStrength('Dit kodeord er klamt 🤢');
+    } else if (password === 'william') {
+      setStrength('Dit kodeord er meh 🐀');
+    } else if (password === 'tobias') {
+      setStrength('Dit kodeord er sej 🥵');
     } else if (strongPassword.test(password)) {
       setStrength('Dit kodeord er stærkt 😎');
     } else if (mediumPassword.test(password)) {
